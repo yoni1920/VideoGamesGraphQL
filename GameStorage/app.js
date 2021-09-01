@@ -13,7 +13,7 @@ const app = express();
 
 app.use(cors());
 
-const port = 8080;
+const PORT = process.env.PORT || 9000
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -25,4 +25,4 @@ app.use('/', GenreController);
 // app.use('/users', userController);
 
 // Rest Setup
-const restServer = app.listen(port, () => console.log(`RestServer is listening on port ${port}`));
+const restServer = app.listen(port, () => console.log(`RestServer is listening on port ${PORT}`));
